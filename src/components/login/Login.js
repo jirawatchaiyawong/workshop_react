@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { UserLogin } from "../../api/api";
 
 export default function Login(props) {
@@ -17,36 +17,34 @@ export default function Login(props) {
     let result = await UserLogin(user);
     console.log(result);
 
-    let data_user = [{
-        id : result.data._id,
-        username : result.data.username
-    }]
+    let data_user = [
+      {
+        id: result.data._id,
+        username: result.data.username,
+      },
+    ];
 
-    if(result.status==='success'){
-        localStorage.setItem('user',JSON.stringify(data_user))
-        props.history.push('/home')
-    }else if(result.status==='error'){
-        alert(result.message)
+    if (result.status === "success") {
+      localStorage.setItem("user", JSON.stringify(data_user));
+      props.history.push("/home");
+    } else if (result.status === "error") {
+      alert(result.message);
     }
   };
   useEffect(() => {
-      if(localStorage.getItem('user')){
-          props.history.push('/home')
-      }
-
-  })
+    if (localStorage.getItem("user")) {
+      props.history.push("/home");
+    }
+  });
   return (
     <div>
       <form onSubmit={login}>
         <div className="base-container">
+        <div className="card text-center">
           <div className="header">Login</div>
           <div className="content">
-            <div className="image">
-              <img
-                className="img-calculate"
-                width="100"
-                src={process.env.PUBLIC_URL + "components/login.png"}
-              ></img>
+            <div className="image  text-center" >
+              <img src={process.env.PUBLIC_URL + "components/login.png"}></img>
             </div>
             <div className="form">
               <div className="form-group">
@@ -74,6 +72,7 @@ export default function Login(props) {
               Login
             </button>
           </div>
+        </div>
         </div>
       </form>
     </div>

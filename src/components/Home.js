@@ -1,13 +1,14 @@
 /* App.jsx */
 
 import React from "react";
+import HomeTable from './product/Product';
 
 
 function Home() {
   return(
     <div className="App">
       
-      <h1>Home นะจ๊ะ</h1>
+      <HomeTable/>
       
     </div>
   );

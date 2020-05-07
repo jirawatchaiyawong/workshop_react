@@ -26,3 +26,20 @@ export const registerUser = (user) => {
       })
     })
   }
+
+  
+export const getAllProduct = () => {
+  return new Promise((resolve, reject) => {
+      axios.get(url + '/products').then(res => {
+          resolve(res.data)
+      })
+  })
+}
+
+export const getViewProduct = (id) => {
+  return new Promise((resolve, reject) => {
+    axios.get(url + '/products/'+id).then(res => {
+      resolve(res.data)
+    })
+  })
+}

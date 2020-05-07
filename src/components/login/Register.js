@@ -1,5 +1,5 @@
 /* Register.jsx */
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 //import loginImg from "../../login.svg";
 import { registerUser } from "../../api/api";
 
@@ -22,34 +22,35 @@ export default function Register(props) {
       salary: salary,
     };
 
-    // let result = await registerUser(user);
-    // console.log(result);
-     console.log(user);
-        // if(result.status==='sucecss'){
-        //     alert('สมัครเรียบร้อยแล้ว')
-        //     // setUsername(null)
-        //     // setPassword = ''
-        //     // setName = ''
-        //     // setAge = 0
-        //     // setSalary = 0
-        //     props.history.push('/login')
-        // }
+    let result = await registerUser(user);
+    console.log(result);
+    console.log(user);
+    if (result.status === "sucecss") {
+      alert("สมัครเรียบร้อยแล้ว");
+      // setUsername(null)
+      // setPassword = ''
+      // setName = ''
+      // setAge = 0
+      // setSalary = 0
+      props.history.push("/login");
+    }
   };
 
   useEffect(() => {
-      console.log('object')
-      // return () => {
+    console.log("object");
+    // return () => {
 
-      // }
-  })
+    // }
+  });
 
   return (
     <div>
       <form onSubmit={insertUser}>
         <div className="base-container register ">
+          <div className="card text-center">
           <div className="header">Register</div>
           <div className="content">
-            <div className="image">
+            <div className="image text-center">
               <img
                 className="img-calculate"
                 width="20"
@@ -103,10 +104,11 @@ export default function Register(props) {
             </div>
           </div>
           <div className="footer">
-            <button type="submit" className="btn">
+            <button type="submit" className="btn btn-outline-primary">
               Register
             </button>
           </div>
+        </div>
         </div>
       </form>
     </div>

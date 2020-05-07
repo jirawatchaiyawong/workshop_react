@@ -1,0 +1,27 @@
+.profile-area{
+    height: 50vh;
+}
+
+.profile-bg{
+    background: linear-gradient(-45deg, #009DF5, #3273DC);
+	background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: rgb(224, 24, 24);
+}
+
+.title-head{
+    font-size: 3.5em;
+    font-weight: 500;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
